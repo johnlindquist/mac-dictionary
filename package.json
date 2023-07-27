@@ -1,0 +1,56 @@
+{
+  "name": "@johnlindquist/mac-dictionary",
+  "author": "John Lindquist (https://johnlindquist.com)",
+  "license": "ISC",
+  "version": "0.0.0-development",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Access the macOS dictionary from Node.js",
+  "main": "index.js",
+  "source": "index.ts",
+  "types": "index.d.ts",
+  "module": "index.js",
+  "files": [
+    "index.js",
+    "binding.gyp",
+    "index.d.ts",
+    "build/**/*"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "node-gyp": "^9.4.0",
+    "semantic-release": "^21.0.7",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^7.0.0"
+  },
+  "scripts": {
+    "build": "node-gyp rebuild && tsc -m nodenext -d index.ts"
+  },
+  "os": [
+    "darwin"
+  ],
+  "release": {
+    "branches": [
+      "+([0-9]).x",
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm"
+    ]
+  }
+}
