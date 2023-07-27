@@ -25,14 +25,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: npm i
-        run: |
-          npm i
-
-      - name: build
-        run: |
-          npm run build
-
       - name: Semantic Release
         run: |
           npx semantic-release
