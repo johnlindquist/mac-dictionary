@@ -27,7 +27,7 @@ jobs:
 
       - name: npm i
         run: |
-          npm i --legacy-peer-deps --no-audit
+          npm i
 
       - name: build
         run: |
